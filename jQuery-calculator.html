@@ -83,6 +83,15 @@
         $(document).ready(function () {
 
             // Your code here...
+            $(".btn").on("click", function () {
+                // Inside the on-click event...
+                // 8. Create a variable called "fridgeMagnet" and set the variable equal to a new div.
+                var firstNumber = $("#first-number");
+                // 9. Give each "fridgeMagnet" the following classes: "letter fridge-color".
+                $("#first-number") = firstNumber.value();
+
+                $("#display").append(fridgeMagnet);
+            });
 
 
         });
