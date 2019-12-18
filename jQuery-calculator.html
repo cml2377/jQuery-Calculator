@@ -106,6 +106,8 @@
                     firstInput.text(firstNumber);
                 } else {
                     // we should be building our second number
+                    secondNumber += event.currentTarget.value;
+                    secondInput.text(secondNumber);
                 }
             })
             buttonOperator.on("click", function (event) {
