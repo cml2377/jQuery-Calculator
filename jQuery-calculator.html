@@ -113,6 +113,8 @@
             buttonOperator.on("click", function (event) {
                 console.log(event.currentTarget.value);
                 operatorClicked = true;
+                buttonOperator = event.currentTarget.value;
+                headerOperator.text(buttonOperator);
             })
             // Your code here...
             $(".clear").click(function (event) {
