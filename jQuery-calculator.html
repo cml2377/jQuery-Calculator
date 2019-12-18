@@ -119,16 +119,9 @@
                 buttonOperator = event.currentTarget.value;
                 headerOperator.text(buttonOperator);
             })
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            // clear and equal button
-=======
-<<<<<<< HEAD
->>>>>>> d96f04c4f1cb1b5f175e761c210ecb74cf1fccd8
-            // Your code here...
 
->>>>>>> 9dec9afa44cabce118819548b7b3d8d6bc9f86f7
+            // clear and equal button
+
             $(".clear").click(function (event) {
                 firstNumber = "";
                 firstInput.text("");
@@ -145,7 +138,7 @@
             })
 
             $(".equal").click(function (event) {
-<<<<<<< HEAD
+
                 var result = 0;
                 var num1 = parseInt(firstNumber);
                 var num2 = parseInt(secondNumber);
@@ -157,7 +150,7 @@
                 }
                 else if (operator === "times") {
                     result = num1 * num2;
-                } 
+                }
                 else if (operator === "divide") {
                     result = num1 / num2;
                 }
@@ -165,11 +158,8 @@
                     result = Math.pow(nu1, num2);
                 }
                 $("#result").text(result);
-=======
                 console.log(event.target);
->>>>>>> 9dec9afa44cabce118819548b7b3d8d6bc9f86f7
-            })
-
+            });
 
 
         });
