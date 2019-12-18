@@ -119,10 +119,21 @@
                 headerOperator.text(operator);
             });
 
-            //when user clicks on var equal, this closes the string of secondNumber, adds it to secondInput, and then calculates the equation.
-
-            //the var result will display the results after the program calculates the math.
-
+            //when user clicks on var equal, calculates the equation.
+            equal.on("click", function () {
+                if (operator == "*") {
+                    //the var result will display the results after the program calculates the math.
+                    result.text(firstNumber * secondNumber);
+                } else if (operator == "+") {
+                    result.text(firstNumber + secondNumber);
+                } else if (operator == "-") {
+                    result.text(firstNumber - secondNumber);
+                } else if (operator == "^") {
+                    result.text(firstNumber ^ secondNumber);
+                } else {
+                    result.text(firstNumber / secondNumber);
+                }
+            });
             //var clear should clear display and empty the strings.
 
         });
