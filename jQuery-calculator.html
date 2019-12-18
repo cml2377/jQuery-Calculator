@@ -37,6 +37,7 @@
                         <button id="button-1" class="btn btn-primary number" value="1"><span>1</span></button>
                         <button id="button-2" class="btn btn-primary number" value="2"><span>2</span></button>
                         <button id="button-3" class="btn btn-primary number" value="3"><span>3</span></button>
+                        <!--changed the value in the operators to be the sign instead of the words, add, multiply, divide, etc. #CL-->
                         <button id="button-plus" class="btn btn-danger operator" value="+"><span>+</span></button>
                         <br><br>
                         <button id="button-4" class="btn btn-primary number" value="4"><span>4</span></button>
@@ -66,6 +67,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <h3 class="card-header">Result</h3>
+                    <!--also aligned right like a REAL calculator #CL-->
                     <div class="card-body text-right">
                         <h1 id="first-number"></h1>
                         <h1 id="operator"></h1>
@@ -97,6 +99,7 @@
             var firstNumber = "";
             var secondNumber = "";
             var operator = "";
+            var clear = "";
 
             var operatorClicked = false;
             $(".number").on("click", function (event) {
@@ -116,12 +119,39 @@
                 buttonOperator = event.currentTarget.value;
                 headerOperator.text(buttonOperator);
             })
+<<<<<<< HEAD
             // clear and equal button
+=======
+<<<<<<< HEAD
+            // Your code here...
+
+>>>>>>> 9dec9afa44cabce118819548b7b3d8d6bc9f86f7
             $(".clear").click(function (event) {
-                alert("You clicked the clear button");
-                console.log(event.target);
+                firstNumber = "";
+                firstInput.text("");
+                secondNumber = "";
+                secondInput.text("");
+                operator = "";
+                headerOperator.text("");
+                operatorClicked = false;
+                // alert("You clicked the clear button");
+                // console.log(event.target);
+                // clear += event.currentTarget.value;
+                // clear.text(clear);
+                // console.log(clear)
+=======
+
+
+            clear.click(function (event) {
+                firstNumber = "";
+                secondNumber = "";
+                operator = "";
+                operatorClicked = false;
+>>>>>>> c0df8f81efffcd42323d23572505ce53ed9f05c4
             })
+
             $(".equal").click(function (event) {
+<<<<<<< HEAD
                 var result = 0;
                 var num1 = parseInt(firstNumber);
                 var num2 = parseInt(secondNumber);
@@ -141,6 +171,9 @@
                     result = Math.pow(nu1, num2);
                 }
                 $("#result").text(result);
+=======
+                console.log(event.target);
+>>>>>>> 9dec9afa44cabce118819548b7b3d8d6bc9f86f7
             })
 
 
