@@ -116,14 +116,31 @@
                 buttonOperator = event.currentTarget.value;
                 headerOperator.text(buttonOperator);
             })
-            // Your code here...
+            // clear and equal button
             $(".clear").click(function (event) {
                 alert("You clicked the clear button");
                 console.log(event.target);
             })
             $(".equal").click(function (event) {
-                alert("You clicked on the equal sign");
-                console.log(event.target);
+                var result = 0;
+                var num1 = parseInt(firstNumber);
+                var num2 = parseInt(secondNumber);
+                if (operator === "plus") {
+                    result = num1 + num2;
+                }
+                else if (operator === "minus") {
+                    result = num1 - num2;
+                }
+                else if (operator === "times") {
+                    result = num1 * num2;
+                } 
+                else if (operator === "divide") {
+                    result = num1 / num2;
+                }
+                else if (operator === "power") {
+                    result = Math.pow(nu1, num2);
+                }
+                $("#result").text(result);
             })
 
 
