@@ -70,7 +70,7 @@
                         <h1 id="first-number"></h1>
                         <h1 id="operator"></h1>
                         <h1 id="second-number"></h1>
-                        <hr>
+                        <hr>g
                         <h1 id="result"></h1>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
             var firstNumber = "";
             var secondNumber = "";
             var operator = "";
+            var clear = "";
 
             var operatorClicked = false;
             $(".number").on("click", function (event) {
@@ -114,8 +115,12 @@
             })
             // Your code here...
             $(".clear").click(function (event) {
-                alert("You clicked the clear button");
-                console.log(event.target);
+                $(".text-right").empty();
+                // alert("You clicked the clear button");
+                // console.log(event.target);
+                // clear += event.currentTarget.value;
+                // clear.text(clear);
+                // console.log(clear)
             })
             $(".equal").click(function (event) {
                 alert("You clicked on the equal sign");
