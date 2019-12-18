@@ -37,24 +37,24 @@
                         <button id="button-1" class="btn btn-primary number" value="1"><span>1</span></button>
                         <button id="button-2" class="btn btn-primary number" value="2"><span>2</span></button>
                         <button id="button-3" class="btn btn-primary number" value="3"><span>3</span></button>
-                        <button id="button-plus" class="btn btn-danger operator" value="plus"><span>+</span></button>
+                        <button id="button-plus" class="btn btn-danger operator" value="+"><span>+</span></button>
                         <br><br>
                         <button id="button-4" class="btn btn-primary number" value="4"><span>4</span></button>
                         <button id="button-5" class="btn btn-primary number" value="5"><span>5</span></button>
                         <button id="button-6" class="btn btn-primary number" value="6"><span>6</span></button>
                         <button id="button-minus" class="btn btn-danger operator"
-                            value="minus"><span>&minus;</span></button>
+                            value="-"><span>&minus;</span></button>
                         <br><br>
                         <button id="button-7" class="btn btn-primary number" value="7"><span>7</span></button>
                         <button id="button-8" class="btn btn-primary number" value="8"><span>8</span></button>
                         <button id="button-9" class="btn btn-primary number" value="9"><span>9</span></button>
                         <button id="button-multiply" class="btn btn-danger operator"
-                            value="times"><span>&times;</span></button>
+                            value="x"><span>&times;</span></button>
                         <br><br>
                         <button id="button-0" class="btn btn-primary number" value="0"><span>0</span></button>
                         <button id="button-divide" class="btn btn-danger operator"
-                            value="divide"><span>&divide;</span></button>
-                        <button id="button-power" class="btn btn-danger operator" value="power"><span>^</span></button>
+                            value="/"><span>&divide;</span></button>
+                        <button id="button-power" class="btn btn-danger operator" value="^"><span>^</span></button>
                         <button id="button-equal" class="btn btn-success equal" value="equals"><span>=</span></button>
                         <br><br>
                         <button id="button-clear" class="btn btn-dark clear" value="clear"><span>clear</span></button>
@@ -66,7 +66,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <h3 class="card-header">Result</h3>
-                    <div class="card-body">
+                    <div class="card-body text-right">
                         <h1 id="first-number"></h1>
                         <h1 id="operator"></h1>
                         <h1 id="second-number"></h1>
@@ -98,25 +98,32 @@
             //the variable firstInput will equal firstNumber when the user finishes adding to firstNumber's string.
             var firstNumber = "";
             var secondNumber = "";
-
-            //this is the goal?
-            // firstInput.value(firstNumber);
+            var operator = "";
 
             //listen for clicks and add to firstNumber accordingly. Store the value of firstNumber into firstInput and display firstInput.
 
             buttonEl.on("click", function () {
-                firstNumber += $(this).attr("value");
-                firstInput.text(firstNumber);
-
+                if (operator == "") {
+                    firstNumber += $(this).attr("value");
+                    firstInput.text(firstNumber);
+                }
+                else {//user then clicks on numbers and adds to the string of secondNumber. 
+                    secondNumber += $(this).attr("value");
+                    secondInput.text(secondNumber);
+                }
             });
 
-            //user then clicks on operator. This can be * - + or /. Program registers the click and saves that to headerOperator. 
-
-            //user then clicks on numbers and adds to the string of secondNumber. 
+            //user then clicks on operator. This can be * - + ^ or /. Program registers the click, DOES NOT allow a change in the  operator, and saves that to headerOperator. 
+            buttonOperator.on("click", function () {
+                operator = $(this).attr("value");
+                headerOperator.text(operator);
+            });
 
             //when user clicks on var equal, this closes the string of secondNumber, adds it to secondInput, and then calculates the equation.
 
             //the var result will display the results after the program calculates the math.
+
+            //var clear should clear display and empty the strings.
 
         });
 
