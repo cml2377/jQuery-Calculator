@@ -81,6 +81,7 @@
     <script type="text/javascript">
 
 
+
         var buttonEl = $(".number");
         var buttonOperator = $(".operator");
         var clear = $(".clear");
@@ -90,41 +91,59 @@
         var secondInput = $("#second-number");
         var result = $("#result");
 
+        // Your code here...
+        //the variable firstNumber and secondNumber will be an empty string that will populate with the user's input.
+        //the variable firstInput will equal firstNumber when the user finishes adding to firstNumber's string.
         var firstNumber = "";
         var secondNumber = "";
         var operator = "";
 
 
         $(document).ready(function () {
-        var firstNumber = "";
-        var operatorClicked = false;
-            $(".number").on("click", function(event) {
+            var firstNumber = "";
+            var operatorClicked = false;
+            $(".number").on("click", function (event) {
                 if (!operatorClicked) {
                     console.log(event.currentTarget.value);
                     firstNumber += event.currentTarget.value;
                     console.log(firstNumber)
                 }
                 else {
-                    
+
                 }
-                
-                
+
+
             })
 
-            $(".number").on("click", function(event) {
+            $(".number").on("click", function (event) {
                 console.log(event.currentTarget.value);
             })
 
-            $(".equal").on("click", function(event) {
-                
+            $(".equal").on("click", function (event) {
+                buttonEl.on("click", function () {
+                    if (operator == "") {
+                        firstNumber += $(this).attr("value");
+                        firstInput.text(firstNumber);
+                    }
+                    else {//user then clicks on numbers and adds to the string of secondNumber. 
+                        secondNumber += $(this).attr("value");
+                        secondInput.text(secondNumber);
+                    }
+                });
+
+                //user then clicks on operator. This can be * - + ^ or /. Program registers the click, DOES NOT allow a change in the  operator, and saves that to headerOperator. 
+                buttonOperator.on("click", function () {
+                    operator = $(this).attr("value");
+                    headerOperator.text(operator);
+                });
             })
-            $(".equal").on("click", function(event) {
-                
+            $(".equal").on("click", function (event) {
+
             })
             // Your code here...
             //the variable firstNumber and secondNumber will be an empty string that will populate with the user's input.
             //the variable firstInput will equal firstNumber when the user finishes adding to firstNumber's string.
-           
+
 
             //listen for clicks and add to firstNumber accordingly. Store the value of firstNumber into firstInput and display firstInput.
 
@@ -161,17 +180,6 @@
                 }
             });
             //var clear should clear display and empty the strings.
-<<<<<<< HEAD
-            //B deleted clear 
-=======
-            clear.on("click", function () {
-                firstInput.text(" ");
-                secondInput.text(" ");
-                headerOperator.text(" ");
-                result.text(" ");
-            });
-
->>>>>>> bca96629dea56d202abc58217a285d5eb8961e6c
         });
 
     </script>
