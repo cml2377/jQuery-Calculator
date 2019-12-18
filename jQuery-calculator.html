@@ -81,6 +81,37 @@
     <script type="text/javascript">
 
         $(document).ready(function () {
+        var firstNumber = "";
+        var operatorClicked = false;
+            $(".number").on("click", function(event) {
+                if (!operatorClicked) {
+                    console.log(event.currentTarget.value);
+                    firstNumber += event.currentTarget.value;
+                    console.log(firstNumber)
+                }
+                else {
+                    
+                }
+                
+                
+            })
+
+            $(".number").on("click", function(event) {
+                console.log(event.currentTarget.value);
+            })
+
+            $(".equal").on("click", function(event) {
+                
+            })
+            $(".equal").on("click", function(event) {
+                
+            })
+
+
+
+
+
+
 
             var buttonEl = $(".number");
             var buttonOperator = $(".operator");
@@ -90,6 +121,8 @@
             var headerOperator = $("#operator"); //operator has + ^ - * / 
             var secondInput = $("#second-number");
             var result = $("#result");
+
+            
 
 
 
