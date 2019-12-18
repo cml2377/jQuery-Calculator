@@ -116,11 +116,15 @@
                 buttonOperator = event.currentTarget.value;
                 headerOperator.text(buttonOperator);
             })
-            // Your code here...
+
+
             $(".clear").click(function (event) {
-                alert("You clicked the clear button");
-                console.log(event.target);
+                firstNumber = "";
+                secondNumber = "";
+                operator = "";
+                operatorClicked = false;
             })
+
             $(".equal").click(function (event) {
                 alert("You clicked on the equal sign");
                 console.log(event.target);
