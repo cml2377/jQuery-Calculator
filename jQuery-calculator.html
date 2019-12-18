@@ -37,6 +37,7 @@
                         <button id="button-1" class="btn btn-primary number" value="1"><span>1</span></button>
                         <button id="button-2" class="btn btn-primary number" value="2"><span>2</span></button>
                         <button id="button-3" class="btn btn-primary number" value="3"><span>3</span></button>
+                        <!--changed the value in the operators to be the sign instead of the words, add, multiply, divide, etc. #CL-->
                         <button id="button-plus" class="btn btn-danger operator" value="+"><span>+</span></button>
                         <br><br>
                         <button id="button-4" class="btn btn-primary number" value="4"><span>4</span></button>
@@ -66,6 +67,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <h3 class="card-header">Result</h3>
+                    <!--also aligned right like a REAL calculator #CL-->
                     <div class="card-body text-right">
                         <h1 id="first-number"></h1>
                         <h1 id="operator"></h1>
@@ -117,6 +119,7 @@
                 buttonOperator = event.currentTarget.value;
                 headerOperator.text(buttonOperator);
             })
+<<<<<<< HEAD
             // Your code here...
 
             $(".clear").click(function (event) {
@@ -132,9 +135,18 @@
                 // clear += event.currentTarget.value;
                 // clear.text(clear);
                 // console.log(clear)
+=======
+
+
+            clear.click(function (event) {
+                firstNumber = "";
+                secondNumber = "";
+                operator = "";
+                operatorClicked = false;
+>>>>>>> c0df8f81efffcd42323d23572505ce53ed9f05c4
             })
+
             $(".equal").click(function (event) {
-                alert("You clicked on the equal sign");
                 console.log(event.target);
             })
 
