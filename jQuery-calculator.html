@@ -123,18 +123,23 @@
             equal.on("click", function () {
                 if (operator == "*") {
                     //the var result will display the results after the program calculates the math.
-                    result.text(firstNumber * secondNumber);
+                    result.text(+firstNumber * +secondNumber);
                 } else if (operator == "+") {
-                    result.text(firstNumber + secondNumber);
+                    result.text(+firstNumber + +secondNumber);
                 } else if (operator == "-") {
-                    result.text(firstNumber - secondNumber);
+                    result.text(+firstNumber - +secondNumber);
                 } else if (operator == "^") {
                     result.text(firstNumber ^ secondNumber);
                 } else {
-                    result.text(firstNumber / secondNumber);
+                    result.text(+firstNumber / +secondNumber);
                 }
             });
             //var clear should clear display and empty the strings.
+            clear.on("click", function() {
+                firstNumber.text(" ");
+                secondNumber.text(" ");
+                operator.text(" ");
+            });
 
         });
 
