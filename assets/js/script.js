@@ -49,6 +49,7 @@ $(document).ready(function () {
 
         // Store off the operator
         operator = $(this).val();
+        console.log(operator)
 
         // Set the HTML of the #operator to the text of what was clicked
         $("#operator").text($(this).text());
@@ -70,24 +71,29 @@ $(document).ready(function () {
 
         // Based on the operator that was chosen.
         // Then run the operation and set the HTML of the result of that operation
-        if (operator === "plus") {
+        if (operator === "+") {
             result = firstNumber + secondNumber;
+            console.log(result)
         }
 
-        else if (operator === "minus") {
+        else if (operator === "-") {
             result = firstNumber - secondNumber;
+            console.log(result)
         }
 
-        else if (operator === "times") {
+        else if (operator === "x") {
             result = firstNumber * secondNumber;
+            console.log(result)
         }
 
-        else if (operator === "divide") {
+        else if (operator === "/") {
             result = firstNumber / secondNumber;
+            console.log(result)
         }
 
-        else if (operator === "power") {
+        else if (operator === "^") {
             result = Math.pow(firstNumber, secondNumber);
+            console.log(result)
         }
 
         $("#result").text(result);
